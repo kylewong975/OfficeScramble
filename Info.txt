@@ -1,0 +1,11 @@
+Welcome to Office Scramble!
+
+This game was created for the FBLA Computer Game and Simulation Event and qualified as a top 5 candidate, 4th place winner in the 2014 State Leadership Conference.
+
+Created by Kyle Wong and Nathan Kim.
+
+HOW TO LAUNCH THE GAME:
+1. Go to the "Game" folder.
+2. Click on the "Office Scramble" executable file.
+
+Enjoy!
