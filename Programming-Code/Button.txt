@@ -1,0 +1,43 @@
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.Graphics;
+
+public class Button
+{
+    private int x;
+    private int y;
+    private int width;
+    private int height;
+    private String text;
+    /**
+     * Constructor for objects of class Button
+     */
+    public Button(int a, int b, int w, int h, String t)
+    {
+        x = a;
+        y = b;
+        width = w;
+        height = h;
+        text = t;
+    }
+
+    public void paint(Graphics g)
+    {
+        g.setColor(new Color(130, 130, 130));
+        g.fillRect(x, y, width, height);
+        g.setColor(Color.black);
+        g.setFont(new Font(Font.SERIF, Font.PLAIN, height - 4));
+        int stringWidth = g.getFontMetrics().stringWidth(text);
+        g.drawString(text, x + (width - stringWidth)/2, y + height - 2);
+    }
+    
+    public boolean isClicked(int a, int b)
+    {
+        return x <= a && a <= x + width && y <= b && b <= y + height;
+    }
+    
+    public String getName()
+    {
+        return text;
+    }
+}

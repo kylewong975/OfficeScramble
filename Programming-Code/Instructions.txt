@@ -1,0 +1,58 @@
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.Graphics;
+
+public class Instructions extends Screen
+{
+    public Instructions()
+    {
+        super();
+        buttons.add(new Button(100, 430, 400, 30, "Back"));
+    }
+    
+    public void paint(Graphics g)
+    {
+        super.paint(g);
+        g.setFont(new Font(Font.SERIF, Font.PLAIN, 15));
+        g.setColor(Color.black);
+        g.drawString("Move your character with the arrow keys.", 5, 20);
+        g.drawString("Your goal is to learn skills you need to complete the job by collecting", 5, 40);
+        g.drawString("   five skills books on each floor.", 5, 60);
+        g.drawString("Once you collect five skill books, talk to your employer to advance to", 5, 80);
+        g.drawString("   the next floor. You may also talk to him for your job's description.", 5, 100);
+        g.drawString("Collect a skill book or talk to your employer by facing them then", 5, 120);
+        g.drawString("   pressing the space key.", 5, 140);
+        g.drawString("Employees are busy doing their own work right now, so you can't talk to them.", 5, 160);
+        g.drawString("Desks and walls cannot be passed. Find a way around them.", 5, 180);
+        g.drawString("Step on switches to toggle doors that are the same color as the switch between", 5, 200);
+        g.drawString("   opened and closed. You cannot pass through closed doors.", 5, 220);
+        g.drawString("You can push a chair by walking into it, as long as there is an empty", 5, 240);
+        g.drawString("   space behind the chair. You cannot push two chairs at once.", 5, 260);
+        g.drawString("Step on a teleporter to instantly appear at the other teleporter of", 5, 280);
+        g.drawString("   the same color. Using a teleporter will turn both ends off afterwards.", 5, 300);
+        g.drawString("   Only teleporters that are turned on will teleport you. A teleporter", 5, 320);
+        g.drawString("   that is on will have a green circle in the center. A teleporter that", 5, 340);
+        g.drawString("   is off will have a black circle instead.", 5, 360);
+        g.drawString("   Stepping on what appears to be a switch with a yellow circle in the", 5, 380);
+        g.drawString("   center will turn all teleporters of the same color back on.", 5, 400);
+        g.drawString("If you are unable to move, try minimizing then re-opening the game window.", 5, 420);
+        
+        g.drawImage(ImageLoader.getImage("person_S"), 280, 10, null);
+        Level.paintSkill(g, 220, 45);
+        Level.paintEmployer(g, 400, 85);
+        Level.paintEmployee(g, 480, 145);
+        Level.paintDesk(g, 380, 165);
+        Level.paintSwitch(g, 380, 205, Color.red);
+        Level.paintDoor(g, 405, 205, Color.red, "H", true);
+        Level.paintDoor(g, 430, 205, Color.red, "H", false);
+        Level.paintChair(g, 380, 245);
+        Level.paintTeleporter(g, 280, 345, Color.red, true);
+        Level.paintTeleporter(g, 305, 345, Color.red, false);
+        Level.paintPower(g, 380, 385, Color.red);
+    }
+    
+    public void processButton(String name)
+    {
+        Gui.changeScreen(new MainMenu());
+    }
+}

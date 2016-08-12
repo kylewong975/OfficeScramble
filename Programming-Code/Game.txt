@@ -1,0 +1,9 @@
+public class Game
+{
+    public static String NAME = "Office Scramble";
+    
+    public static void main(String[] args)
+    {
+        Gui.start();
+    }
+}

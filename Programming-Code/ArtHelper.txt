@@ -1,0 +1,40 @@
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.image.BufferedImage;
+import java.io.*;
+import java.util.Random;
+import javax.imageio.ImageIO;
+
+public class ArtHelper
+{
+    public static void carpet() throws IOException
+    {
+        Random rng = new Random("carpet".hashCode());
+        BufferedImage image = new BufferedImage(16, 16, BufferedImage.TYPE_INT_ARGB);
+        Graphics g = image.getGraphics();
+        for(int x = 0; x < 16; x++)
+        {
+            for(int y = 0; y < 16; y++)
+            {
+                switch(rng.nextInt(6))
+                {
+                    case 0:
+                    case 1:
+                    case 2:
+                    g.setColor(new Color(50, 50, 100 + rng.nextInt(20)));
+                    break;
+                    case 3:
+                    case 4:
+                    int k = rng.nextInt(20);
+                    g.setColor(new Color(70 + k, 50, 100 + k));
+                    break;
+                    default:
+                    g.setColor(new Color(50, 70 + rng.nextInt(10), 100));
+                    break;
+                }
+                g.fillRect(x, y, 1, 1);
+            }
+        }
+        ImageIO.write(image, "png", new File("art/carpet.png"));
+    }
+}

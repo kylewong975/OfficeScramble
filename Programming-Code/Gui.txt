@@ -1,0 +1,86 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+public class Gui extends JPanel implements KeyListener, MouseListener, ActionListener
+{
+    private static final JFrame window = new JFrame(Game.NAME);
+    private static final int DELAY = 20;
+    private static Gui gui;
+    private Screen screen;
+    private Screen nextScreen;
+    
+    public static void start()
+    {
+        window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        gui = new Gui();
+        window.add(gui);
+        window.setSize(Screen.WIDTH, Screen.HEIGHT);
+        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+        window.setLocation(((int)screenSize.getWidth() - window.getWidth())/2, ((int)screenSize.getHeight() - window.getHeight())/2);
+        window.setVisible(true);
+        gui.setFocusable(true);
+        gui.requestFocusInWindow();
+        gui.addKeyListener(gui);
+        gui.addMouseListener(gui);
+        Timer timer = new Timer(DELAY, gui);
+        timer.start();
+    }
+    
+    public static void end()
+    {
+        window.dispose();
+    }
+    
+    public static void changeScreen(Screen screen)
+    {
+        gui.nextScreen = screen;
+    }
+    
+    public Gui()
+    {
+        setSize(Screen.WIDTH, Screen.HEIGHT);
+        screen = new MainMenu();
+    }
+    
+    public void keyPressed(KeyEvent e)
+    {
+        screen.keyPressed(e);
+    }
+    
+    public void keyReleased(KeyEvent e)
+    {
+        screen.keyReleased(e);
+    }
+    
+    public void mousePressed(MouseEvent e)
+    {
+        screen.mousePressed(e.getX(), e.getY());
+    }
+    
+    public void paintComponent(Graphics g)
+    {
+        screen.paint(g);
+    }
+    
+    public void actionPerformed(ActionEvent e)
+    {
+        tick();
+        window.repaint();
+    }
+    
+    public void tick()
+    {
+        if(nextScreen != null)
+        {
+            screen = nextScreen;
+            nextScreen = null;
+        }
+    }
+    
+    public void keyTyped(KeyEvent e){}
+    public void mouseReleased(MouseEvent e){}
+    public void mouseClicked(MouseEvent e){}
+    public void mouseEntered(MouseEvent e){}
+    public void mouseExited(MouseEvent e){}
+}

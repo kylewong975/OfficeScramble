@@ -1,0 +1,581 @@
+import java.awt.Color;
+import java.awt.Graphics;
+import java.io.*;
+import java.util.*;
+
+public class Level
+{
+    private PlayScreen screen;
+    private String[][] objects = new String[25][25];
+    private boolean[][] horizontal = new boolean[25][24];
+    private boolean[][] vertical = new boolean[24][25];
+    private int playerX;
+    private int playerY;
+    private String playerDirection;
+    private String message;
+    private int skills;
+    
+    public Level(int level, PlayScreen scr)
+    {
+        screen = scr;
+        try
+        {
+            BufferedReader reader = new BufferedReader(new FileReader(new File("levels/" + level + ".txt")));
+            int y = 0;
+            while(y < 25)
+            {
+                StringTokenizer strTok = new StringTokenizer(reader.readLine());
+                int x = 0;
+                while(strTok.hasMoreTokens())
+                {
+                    String s = strTok.nextToken();
+                    if(y < 24 && (s.charAt(0) == 'T' || s.charAt(0) == '1'))
+                    {
+                        horizontal[x][y] = true;
+                    }
+                    if(x < 24 && (s.charAt(1) == 'T' || s.charAt(1) == '1'))
+                    {
+                        vertical[x][y] = true;
+                    }
+                    objects[x][y] = s.substring(2);
+                    x++;
+                }
+                y++;
+            }
+            playerX = Integer.parseInt(reader.readLine());
+            playerY = Integer.parseInt(reader.readLine());
+            playerDirection = reader.readLine();
+            message = "";
+            while(reader.ready())
+            {
+                message += reader.readLine() + "\n";
+            }
+            message = message.substring(0, message.length() - 1);
+            reader.close();
+        }
+        catch(Exception e)
+        {
+            e.printStackTrace();
+        }
+        skills = 0;
+        if(level <= 5)
+        {
+            talk();
+        }
+    }
+    
+    public void paint(Graphics g)
+    {
+        for(int x = 0; x < 25; x++)
+        {
+            for(int y = 0; y < 25; y++)
+            {
+                g.drawImage(ImageLoader.getImage("carpet"), x*16, y*16, null);
+            }
+        }
+        for(int x = 0; x < objects.length; x++)
+        {
+            for(int y = 0; y < objects[x].length; y++)
+            {
+                String s = objects[x][y];
+                if(s.equals("employer"))
+                {
+                    paintEmployer(g, x*16, y*16);
+                }
+                if(s.equals("employee"))
+                {
+                    paintEmployee(g, x*16, y*16);
+                }
+                if(s.equals("chair"))
+                {
+                    paintChair(g, x*16, y*16);
+                }
+                if(s.indexOf("door") == 0)
+                {
+                    paintDoor(g, x*16, y*16, stringToColor(s.split(":")[1]), s.split(":")[2], s.split(":")[3].equals("C"));
+                }
+                if(s.indexOf("switch") == 0)
+                {
+                    paintSwitch(g, x*16, y*16, stringToColor(s.split(":")[1]));
+                }
+                if(s.indexOf("teleporter") == 0)
+                {
+                    paintTeleporter(g, x*16, y*16, stringToColor(s.split(":")[1]), s.split(":")[2].equals("T"));
+                }
+                if(s.indexOf("power") == 0)
+                {
+                    paintPower(g, x*16, y*16, stringToColor(s.split(":")[1]));
+                }
+                if(s.equals("desk"))
+                {
+                    paintDesk(g, x*16, y*16);
+                }
+                if(s.equals("skill"))
+                {
+                    paintDesk(g, x*16, y*16);
+                    paintSkill(g, x*16, y*16);
+                }
+            }
+        }
+        paintPlayer(g);
+        g.setColor(new Color(150, 150, 150));
+        for(int x = 0; x < horizontal.length; x++)
+        {
+            for(int y = 0; y < horizontal[x].length; y++)
+            {
+                if(horizontal[x][y])
+                {
+                    g.fillRect(16*x, 16*y + 15, 16, 2);
+                }
+            }
+        }
+        for(int x = 0; x < vertical.length; x++)
+        {
+            for(int y = 0; y < vertical[x].length; y++)
+            {
+                if(vertical[x][y])
+                {
+                    g.fillRect(16*x + 15, 16*y, 2, 16);
+                }
+            }
+        }
+    }
+    
+    public static void paintEmployer(Graphics g, int x, int y)
+    {
+        g.drawImage(ImageLoader.getImage("employer"), x + 2, y + 2, null);
+    }
+    
+    public static void paintEmployee(Graphics g, int x, int y)
+    {
+        g.drawImage(ImageLoader.getImage("employee"), x + 2, y + 2, null);
+    }
+    
+    public static void paintChair(Graphics g, int x, int y)
+    {
+        g.drawImage(ImageLoader.getImage("chair"), x + 2, y + 2, null);
+    }
+    
+    public static void paintDoor(Graphics g, int x, int y, Color c, String direction, boolean closed)
+    {
+        g.setColor(c);
+        if(closed)
+        {
+            if(direction.equals("H"))
+            {
+                g.fillRect(x + 1, y + 7, 14, 2);
+            }
+            else
+            {
+                g.fillRect(x + 7, y + 1, 2, 14);
+            }
+        }
+        else
+        {
+            if(direction.equals("H"))
+            {
+                g.fillRect(x + 1, y + 7, 1, 2);
+                g.fillRect(x + 14, y + 7, 1, 2);
+            }
+            else
+            {
+                g.fillRect(x + 7, y + 1, 2, 1);
+                g.fillRect(x + 7, y + 14, 2, 1);
+            }
+        }
+    }
+    
+    public static void paintSwitch(Graphics g, int x, int y, Color c)
+    {
+        g.setColor(c);
+        g.fillOval(x + 2, y + 2, 12, 12);
+    }
+    
+    public static void paintTeleporter(Graphics g, int x, int y, Color c, boolean on)
+    {
+        g.setColor(c);
+        g.fillOval(x + 2, y + 2, 12, 12);
+        g.setColor(Color.black);
+        g.fillOval(x + 5, y + 5, 6, 6);
+        if(on)
+        {
+            g.setColor(Color.green);
+        }
+        g.fillOval(x + 6, y + 6, 4, 4);
+    }
+    
+    public static void paintPower(Graphics g, int x, int y, Color c)
+    {
+        g.setColor(c);
+        g.fillOval(x + 2, y + 2, 12, 12);
+        g.setColor(Color.black);
+        g.fillOval(x + 5, y + 5, 6, 6);
+        g.setColor(Color.yellow);
+        g.fillOval(x + 6, y + 6, 4, 4);
+    }
+    
+    public static void paintDesk(Graphics g, int x, int y)
+    {
+        g.setColor(new Color(200, 200, 200));
+        g.fillRect(x, y, 16, 16);
+    }
+    
+    public static void paintSkill(Graphics g, int x, int y)
+    {
+        g.setColor(Color.orange);
+        g.fillRect(x + 4, y + 2, 8, 12);
+    }
+    
+    private void paintPlayer(Graphics g)
+    {
+        g.drawImage(ImageLoader.getImage("person_" + playerDirection), playerX*16 + 2, playerY*16 + 2, null);
+    }
+    
+    public void moveUp()
+    {
+        playerDirection = "N";
+        boolean canMove = true;
+        if(playerY > 0 && !horizontal[playerX][playerY - 1])
+        {
+            String object = objects[playerX][playerY - 1];
+            if(object.equals("employer") || object.equals("employee"))
+            {
+                canMove = false;
+            }
+            if(object.equals("chair"))
+            {
+                if(playerY > 1 && objects[playerX][playerY - 2].equals("") && !horizontal[playerX][playerY - 2])
+                {
+                    objects[playerX][playerY - 1] = "";
+                    objects[playerX][playerY - 2] = "chair";
+                }
+                else
+                {
+                    canMove = false;
+                }
+            }
+            if(object.indexOf("door") == 0 && object.split(":")[3].equals("C"))
+            {
+                canMove = false;
+            }
+            if(object.equals("desk") || object.equals("skill"))
+            {
+                canMove = false;
+            }
+        }
+        else
+        {
+            canMove = false;
+        }
+        if(canMove)
+        {
+            playerY--;
+            stepOn();
+        }
+    }
+    
+    public void moveDown()
+    {
+        playerDirection = "S";
+        boolean canMove = true;
+        if(playerY < 24 && !horizontal[playerX][playerY])
+        {
+            String object = objects[playerX][playerY + 1];
+            if(object.equals("employer") || object.equals("employee"))
+            {
+                canMove = false;
+            }
+            if(object.equals("chair"))
+            {
+                if(playerY <23 && objects[playerX][playerY + 2].equals("") && !horizontal[playerX][playerY + 1])
+                {
+                    objects[playerX][playerY + 1] = "";
+                    objects[playerX][playerY + 2] = "chair";
+                }
+                else
+                {
+                    canMove = false;
+                }
+            }
+            if(object.indexOf("door") == 0 && object.split(":")[3].equals("C"))
+            {
+                canMove = false;
+            }
+            if(object.equals("desk") || object.equals("skill"))
+            {
+                canMove = false;
+            }
+        }
+        else
+        {
+            canMove = false;
+        }
+        if(canMove)
+        {
+            playerY++;
+            stepOn();
+        }
+    }
+    
+    public void moveLeft()
+    {
+        playerDirection = "W";
+        boolean canMove = true;
+        if(playerX > 0 && !vertical[playerX - 1][playerY])
+        {
+            String object = objects[playerX - 1][playerY];
+            if(object.equals("employer") || object.equals("employee"))
+            {
+                canMove = false;
+            }
+            if(object.equals("chair"))
+            {
+                if(playerX > 1 && objects[playerX - 2][playerY].equals("") && !vertical[playerX - 2][playerY])
+                {
+                    objects[playerX - 1][playerY] = "";
+                    objects[playerX - 2][playerY] = "chair";
+                }
+                else
+                {
+                    canMove = false;
+                }
+            }
+            if(object.indexOf("door") == 0 && object.split(":")[3].equals("C"))
+            {
+                canMove = false;
+            }
+            if(object.equals("desk") || object.equals("skill"))
+            {
+                canMove = false;
+            }
+        }
+        else
+        {
+            canMove = false;
+        }
+        if(canMove)
+        {
+            playerX--;
+            stepOn();
+        }
+    }
+    
+    public void moveRight()
+    {
+        playerDirection = "E";
+        boolean canMove = true;
+        if(playerX < 24 && !vertical[playerX][playerY])
+        {
+            String object = objects[playerX + 1][playerY];
+            if(object.equals("employer") || object.equals("employee"))
+            {
+                canMove = false;
+            }
+            if(object.equals("chair"))
+            {
+                if(playerX <23 && objects[playerX + 2][playerY].equals("") && !vertical[playerX + 1][playerY])
+                {
+                    objects[playerX + 1][playerY] = "";
+                    objects[playerX + 2][playerY] = "chair";
+                }
+                else
+                {
+                    canMove = false;
+                }
+            }
+            if(object.indexOf("door") == 0 && object.split(":")[3].equals("C"))
+            {
+                canMove = false;
+            }
+            if(object.equals("desk") || object.equals("skill"))
+            {
+                canMove = false;
+            }
+        }
+        else
+        {
+            canMove = false;
+        }
+        if(canMove)
+        {
+            playerX++;
+            stepOn();
+        }
+    }
+    
+    private void stepOn()
+    {
+        screen.step();
+        String object = objects[playerX][playerY];
+        if(object.indexOf("switch") == 0)
+        {
+            String color = object.split(":")[1];
+            for(int x = 0; x < 25; x++)
+            {
+                for(int y = 0; y < 25; y++)
+                {
+                    String otherObj = objects[x][y];
+                    if(otherObj.indexOf("door") == 0 && otherObj.split(":")[1].equals(color))
+                    {
+                        if(otherObj.charAt(otherObj.length() - 1) == 'C')
+                        {
+                            objects[x][y] = otherObj.substring(0, otherObj.length() - 1) + 'O';
+                        }
+                        else
+                        {
+                            objects[x][y] = otherObj.substring(0, otherObj.length() - 1) + 'C';
+                        }
+                    }
+                }
+            }
+        }
+        if(object.indexOf("teleporter") == 0)
+        {
+            String color = object.split(":")[1];
+            if(object.split(":")[2].equals("T"))
+            {
+                for(int x = 0; x < 25; x++)
+                {
+                    for(int y = 0; y < 25; y++)
+                    {
+                        String otherObj = objects[x][y];
+                        if(otherObj.indexOf("teleporter:" + color) == 0 && (x != playerX || y != playerY))
+                        {
+                            objects[playerX][playerY] = object.substring(0, object.length() - 1) + 'F';
+                            objects[x][y] = otherObj.substring(0, otherObj.length() - 1) + 'F';
+                            playerX = x;
+                            playerY = y;
+                            return;
+                        }
+                    }
+                }
+            }
+        }
+        if(object.indexOf("power") == 0)
+        {
+            String color = object.split(":")[1];
+            for(int x = 0; x < 25; x++)
+            {
+                for(int y = 0; y < 25; y++)
+                {
+                    String otherObj = objects[x][y];
+                    if(otherObj.equals("teleporter:" + color + ":F"))
+                    {
+                        objects[x][y] = otherObj.substring(0, otherObj.length() - 1) + 'T';
+                    }
+                }
+            }
+        }
+    }
+    
+    public void interact()
+    {
+        if(playerDirection.equals("N") && playerY > 0)
+        {
+            String object = objects[playerX][playerY - 1];
+            if(object.equals("employer"))
+            {
+                talk();
+            }
+            if(object.equals("skill"))
+            {
+                objects[playerX][playerY - 1] = "desk";
+                skills++;
+            }
+        }
+        if(playerDirection.equals("S") && playerY < 24)
+        {
+            String object = objects[playerX][playerY + 1];
+            if(object.equals("employer"))
+            {
+                talk();
+            }
+            if(object.equals("skill"))
+            {
+                objects[playerX][playerY + 1] = "desk";
+                skills++;
+            }
+        }
+        if(playerDirection.equals("W") && playerX > 0)
+        {
+            String object = objects[playerX - 1][playerY];
+            if(object.equals("employer"))
+            {
+                talk();
+            }
+            if(object.equals("skill"))
+            {
+                objects[playerX - 1][playerY] = "desk";
+                skills++;
+            }
+        }
+        if(playerDirection.equals("E") && playerX < 24)
+        {
+            String object = objects[playerX + 1][playerY];
+            if(object.equals("employer"))
+            {
+                talk();
+            }
+            if(object.equals("skill"))
+            {
+                objects[playerX + 1][playerY] = "desk";
+                skills++;
+            }
+        }
+    }
+    
+    public int getSkills()
+    {
+        return skills;
+    }
+    
+    private void talk()
+    {
+        if(skills == 5)
+        {
+            levelUp();
+        }
+        else
+        {
+            screen.setMessage(message);
+        }
+    }
+    
+    private void levelUp()
+    {
+        screen.setLevelUp();
+    }
+    
+    private Color stringToColor(String s)
+    {
+        if(s.equals("red"))
+        {
+            return Color.red;
+        }
+        if(s.equals("blue"))
+        {
+            return Color.blue;
+        }
+        if(s.equals("green"))
+        {
+            return Color.green;
+        }
+        if(s.equals("yellow"))
+        {
+            return Color.yellow;
+        }
+        if(s.equals("orange"))
+        {
+            return new Color(255, 170, 50);
+        }
+        if(s.equals("cyan"))
+        {
+            return Color.cyan;
+        }
+        if(s.equals("magenta"))
+        {
+            return Color.magenta;
+        }
+        return null;
+    }
+}

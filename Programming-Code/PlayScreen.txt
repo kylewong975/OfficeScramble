@@ -1,0 +1,179 @@
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.Graphics;
+import java.awt.image.BufferedImage;
+import java.awt.event.KeyEvent;
+import java.io.*;
+import java.util.StringTokenizer;
+
+public class PlayScreen extends Screen
+{
+    private static String congratulations;
+    private Level level;
+    private int floor;
+    private String message = null;
+    private boolean willLevel;
+    private int restarts;
+    private int steps;
+    
+    public PlayScreen()
+    {
+        super();
+        floor = 1;
+        buttons.add(new Button(475, 25, 100, 30, "Quit"));
+        buttons.add(new Button(475, 80, 100, 30, "Restart"));
+        level = new Level(floor, this);
+        willLevel = false;
+        restarts = 0;
+        steps = 0;
+    }
+    
+    public void paint(Graphics g)
+    {
+        super.paint(g);
+        if(message == null)
+        {
+            BufferedImage image = new BufferedImage(400, 400, BufferedImage.TYPE_INT_ARGB);
+            level.paint(image.getGraphics());
+            g.drawImage(image, 25, 25, null);
+        }
+        else
+        {
+            BufferedImage text = new BufferedImage(400, 400, BufferedImage.TYPE_INT_ARGB);
+            Graphics gr = text.getGraphics();
+            gr.setColor(Color.green);
+            gr.fillRect(0, 0, 400, 20);
+            gr.setColor(new Color(0, 150, 0, 230));
+            gr.fillRect(0, 20, 400, 380);
+            gr.setColor(Color.yellow);
+            gr.setFont(new Font(Font.MONOSPACED, Font.PLAIN, 15));
+            StringTokenizer strTok = new StringTokenizer(message, "\n\r");
+            int line = 0;
+            while(strTok.hasMoreTokens())
+            {
+                gr.drawString(strTok.nextToken(), 5, 40 + 20*line);
+                line++;
+            }
+            g.drawImage(text, 25, 25, null);
+        }
+        g.setColor(Color.black);
+        g.setFont(new Font(Font.SERIF, Font.PLAIN, 30));
+        g.drawString("Floor: " + floor, 475, 140);
+        g.drawString("Skills: " + level.getSkills(), 475, 175);
+        g.setFont(new Font(Font.SERIF, Font.PLAIN, 20));
+        g.drawString("Restarts: " + restarts, 430, 200);
+        g.drawString("Total Steps: " + steps, 430, 225);
+        paintButtons(g);
+    }
+    
+    public void setMessage(String text)
+    {
+        message = text;
+        buttons.add(new Button(180, 365, 100, 30, "Continue"));
+    }
+    
+    public void setLevelUp()
+    {
+        willLevel = true;
+        setMessage(congratulations.split("/")[floor < 5 ? 0 : 1]);
+    }
+    
+    public void levelUp()
+    {
+        floor++;
+        level = new Level(floor, this);
+    }
+    
+    public void step()
+    {
+        if(floor <= 5)
+        {
+            steps++;
+        }
+    }
+    
+    public void keyPressed(KeyEvent e)
+    {
+        if(message == null)
+        {
+            switch(e.getKeyCode())
+            {
+                case KeyEvent.VK_UP:
+                level.moveUp();
+                break;
+                case KeyEvent.VK_LEFT:
+                level.moveLeft();
+                break;
+                case KeyEvent.VK_DOWN:
+                level.moveDown();
+                break;
+                case KeyEvent.VK_RIGHT:
+                level.moveRight();
+                break;
+                case KeyEvent.VK_SPACE:
+                level.interact();
+                break;
+                default:
+                break;
+            }
+        }
+    }
+    
+    public void keyReleased(KeyEvent e)
+    {
+        switch(e.getKeyCode())
+        {
+            case KeyEvent.VK_ESCAPE:
+            processButton("Quit");
+            break;
+            default:
+            break;
+        }
+    }
+    
+    public void processButton(String name)
+    {
+        if(name.equals("Quit"))
+        {
+            Gui.changeScreen(new MainMenu());
+        }
+        if(name.equals("Restart"))
+        {
+            if(floor <= 5)
+            {
+                restarts++;
+            }
+            level = new Level(floor, this);
+        }
+        if(name.equals("Continue"))
+        {
+            message = null;
+            buttons.remove(2);
+            if(willLevel)
+            {
+                levelUp();
+                willLevel = false;
+            }
+        }
+    }
+    
+    static
+    {
+        try
+        {
+            String str = "";
+            FileReader reader = new FileReader(new File("levels/congratulations.txt"));
+            int c = reader.read();
+            while(c > 0)
+            {
+                str += (char)c;
+                c = reader.read();
+            }
+            congratulations = str;
+        }
+        catch(Exception e)
+        {
+            e.printStackTrace();
+        }
+    }
+}
