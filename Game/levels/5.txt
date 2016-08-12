@@ -1,0 +1,39 @@
+00 00 00 00 00 00 00 00 00 00 00 00 00switch:red 00 00 00 00 00 00 00 00 00 00 00 00
+00 00chair 00desk 00 00 00chair 00desk 00 00 00 00 00desk 00skill 00desk 00 00 00 00 00desk 00chair 00 00 00desk 00chair 00
+00 00chair 00desk 00employee 00 00chair 00desk 00 00 00 00 00 00 00 00 00 00 00 00desk 00chair 00 00employee 00desk 00chair 00
+10 10chair 10desk 10 10 10chair 10desk 10 10 10 10 00 00 00 10 10 10 10 10desk 10chair 10 10 10desk 10chair 10
+10teleporter:blue:F 10door:green:V:O 00 00 00 00 00chair 00chair 00chair 00chair 01chair 00 00desk 01 00 00 00 00 00 00 00 00chair 00chair 00chair 00chair
+00 00 00 00 00 00switch:blue 00desk 00desk 00desk 00desk 01desk 01door:green:H:C 01desk 01door:red:H:C 00 00 00 00 00 00 00employee 00desk 00desk 00desk 00desk
+00 00 00 00 00 00 00 00 00 00 01 00 00desk 01 00 00 00 00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00 00 00 01 00 00desk 01 00 00 00chair 00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00 00 00 00 00 00desk 00 00 00desk 00chair 00desk 00 00 00 00 00 00chair 00
+00 00chair 00chair 00chair 00chair 00chair 00 00chair 00chair 00 01 00 00desk 01 00 00desk 00 00desk 00chair 00chair 00chair 00desk 00chair 00 00chair
+00 00desk 00desk 00desk 00 00 00chair 00 00chair 00 01 00 00desk 01 00 00desk 00 00chair 00 00chair 00 00desk 00 00chair 00
+00 00 00employee 00 00employee 00chair 00 00chair 00employee 00 01 00 00desk 01 00 00chair 00 00 00chair 00 00employee 00desk 00power:blue 00 00switch:green
+00desk 00desk 00desk 00desk 00skill 00desk 00skill 00desk 00desk 00desk 01desk 01door:blue:H:C 01desk 01door:blue:H:O 00desk 00desk 00desk 00desk 00skill 00desk 00skill 00desk 00desk 00desk 00desk
+00chair 00 00chair 00 00 00chair 00chair 00 00 00 01 00 00desk 01 00 00 00 00 00chair 00employee 00 00chair 00chair 00chair 00chair
+00 00chair 00 00chair 00chair 00 00 00 00 00 01 00 00desk 01 00 00 00 00 00 00 00chair 00 00 00 00switch:red
+00chair 00 00chair 00chair 00 00 00 00 00 00 01 00 00desk 01 00 00 00 00 00 00 00 00desk 00desk 00desk 00desk
+00 00chair 00 00employee 00 00 00 00 00 00 00 00 00desk 00 00 00 00 00 00 00 00 00chair 00chair 00chair 00chair
+00 00desk 00desk 00desk 00desk 00 00 00 00 00desk 01desk 00 00desk 01 00 00 00 00 00 00chair 00 00 00chair 00 00
+00 00 00chair 00employee 00 00 00 00 00chair 00 01switch:blue 00 00desk 01 00 00 00 00 00chair 00 00chair 00chair 00 00desk 00
+00 00 00 00 00 00 00desk 00desk 00 00desk 01desk 01door:red:H:O 01desk 01door:green:H:C 00 00 00 00 00 00chair 00 00 00desk 00teleporter:blue:F 00chair
+10 10 10 10 10 10 10desk 10desk 10switch:green 10desk 11desk 00 00desk 01 10 10 10 10 10chair 10 10chair 10 10 10chair 10
+00 00chair 00desk 00 00 00chair 00desk 00 00 00 00 00 00 00 00 00 00 00 00desk 00chair 00 00 00desk 00chair 00
+00 00chair 00desk 00employee 00 00chair 00desk 00 00 00 00 00 00employer 00 00 00 00 00 00desk 00chair 00 00employee 00desk 00chair 00
+00 00chair 00desk 00 00 00chair 00desk 00 00 00 00 00 00 00 00 00 00 00 00desk 00chair 00 00 00desk 00chair 00
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+12
+23
+N
+Spreadsheet Applications Job:
+We need to implement complex functions in
+order to find the maximum profit we can make
+from our business products.
+Skills you will need include:
+Functions, Graphs and Charts, Macros and
+Templates, Pivot Tables, Filtering and
+Extracting Data, and Format and Print
+options.
+ 
+Good luck!

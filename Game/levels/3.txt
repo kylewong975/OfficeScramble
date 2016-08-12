@@ -1,0 +1,42 @@
+00desk 00skill 01desk 00 00 01 00 00 00 00 00 00 00desk 00 00 00 00 00 01 00 00 00 00 00 00
+00 00 01 00 00 01 00chair 00chair 00chair 00 00chair 00chair 00desk 00chair 00chair 00 00chair 00chair 01chair 00 00 00 00power:blue 00power:green 00
+00chair 00 01chair 00 00 01 00desk 00desk 00desk 00 00desk 00desk 00desk 00desk 00desk 00 00desk 00desk 01desk 00 00 00 00 00 00
+00 00chair 01 00 00 01 00 00employee 00 00 00 00 00desk 00 00 00 00employee 00 01 00 00 00chair 00chair 00chair 00chair
+00chair 00 01chair 00 00 01 00 00 00 00 00 00 00desk 00 00 00 00 00 01 00 00 00desk 00desk 00desk 00desk
+00 00chair 01 00 00 01 00 00 00 00 00 00 00teleporter:red:T 00 00 00 00 00 01 00 00 00 00 00employee 00
+10 10 00chair 00 00 01 00 00 00 00 00 00 00desk 00 00 00 00 00 01 00 00 00 00 00 00
+00 00 00 00 00 01 00 00 00 00 00 00 00desk 00 00 00 00 00 01 00 00 00chair 00chair 00chair 00chair
+00 00 00 00 00 01 00chair 00chair 00chair 00chair 00chair 00chair 00desk 00 00 00 00 00 01 00 00 00desk 00desk 00desk 00desk
+00 00 00 00 00 01 00 00 00 00 00 00 00desk 00chair 00chair 00 00chair 00chair 01desk 00 00 00 00 00 00
+00 00 00 00 00 01 00chair 00chair 00chair 00chair 00chair 00chair 00desk 00 00 00chair 00 00 01desk 00 00 00 00 00 00
+00chair 00chair 00chair 00employee 00 01 00 00employee 00 00power:red 00 00chair 00desk 00 00employee 00 00employee 00 01desk 00 00 00 00 00 00employee
+00desk 00desk 00desk 00desk 00desk 01teleporter:blue:T 10desk 10desk 10desk 10desk 10desk 10desk 00 00desk 00desk 00skill 00desk 00desk 01desk 00teleporter:blue:T 00desk 00desk 00desk 00desk 00skill
+00 00 00 00 00 01 00power:red 00 00chair 00 00chair 01 00desk 00chair 00chair 00chair 00chair 00chair 01 00 00 00 00chair 00 00
+00 00 00 00 00 01 00 00chair 00 00chair 00 01 00desk 00desk 00desk 00skill 00desk 00desk 01 00 00 00 00 00chair 00
+00chair 00chair 00chair 00chair 00 01 00chair 00 00chair 00 00 01 00desk 00 00 00chair 00 00 01 00 00 00chair 00chair 00chair 00chair
+00desk 00desk 00desk 00desk 00 01 00 00chair 00desk 00 00 01 00desk 00chair 00chair 00 00chair 00chair 01chair 00 00 00desk 00desk 00desk 00desk
+00 00 00 00 00 01 10chair 10 10 00chair 10 11 00desk 00 00 00 00 00 01 00 00 00 00employee 00 00
+00 00 00 00 00 01 00power:green 00 00 00 00 00 00desk 00 00 00 00 00 01 00 00 00 00 00 00
+00 00 00 00 00 01employee 00 00 00 00 00 00 00teleporter:red:T 00 00 00 00 00 01 00 00 00chair 00chair 00chair 00chair
+00chair 00 00 00 00chair 01skill 00 00 00 00 00 00 00desk 00 00 00 00 00 01 00 00 00desk 00desk 00desk 00desk
+00 00chair 00chair 00chair 00 01desk 00 00 00employer 00 00 00 00desk 00chair 00 00 00 00 01desk 00 00 00 00 00 00
+00chair 00 00 00 00chair 01desk 00 00 00 00 00 00 00desk 00chair 00 00 00 00employee 01desk 00 00 00 00 00 00
+00 00chair 00 00chair 00 01desk 00 00 00 00 00 00 00desk 00chair 00 00 00 00chair 01desk 00 00 00 00 00 00
+00 00 00power:blue 00 00 01desk 00 00 00 00 00 00teleporter:green:T 00desk 00chair 00 00 00 00chair 01desk 00teleporter:green:T 00 00 00 00 00
+8
+22
+N
+Computer Problem Solving Job:
+We need to print a document in another
+state, and we need all the information
+about the printer, the computer, and the
+network that connects them to carry out
+this procedure.
+Skills you will need:
+Printers, Laptops, Networks, Operating
+systems, and Personal computer (PC)
+components
+ 
+Also, we've recently installed
+teleportation devices in the office
+to make it easier to get around.

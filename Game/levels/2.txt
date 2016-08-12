@@ -1,0 +1,40 @@
+00chair 00chair 00chair 00 00chair 00chair 00chair 01chair 00chair 00desk 00desk 00 00 00chair 00chair 00chair 01chair 00chair 00chair 00chair 00chair 00employee 00chair 00chair 00chair
+00desk 00desk 00desk 00 00desk 00desk 00desk 01desk 00chair 00desk 00desk 00 00employee 00desk 00desk 00desk 01desk 00desk 00desk 00desk 00desk 00 00skill 00desk 00desk
+00 00 00 00 00 00 00 01 00chair 00skill 00desk 00 00 00 00 00 11 00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00employee 00 00 00chair 00switch:red 00 00chair 00 00 00 10door:blue:V:C 00 00 00 00 00 00 00switch:green 00
+00chair 00 00 00employee 00 00 00 01 00 00 00desk 00desk 00 00 00 00 01 00desk 00desk 00desk 00desk 00employee 00desk 00desk 00desk
+00desk 00 00employee 00desk 00 00 00desk 01desk 00 00 00 00 00 00 00 00 01 00chair 00chair 00chair 00chair 00 00chair 00chair 00chair
+00desk 00 00 00desk 00 00chair 00skill 01desk 00chair 00chair 00chair 00chair 00 00chair 00chair 00chair 01chair 00 00 00 00 00 00 00 00
+10desk 10 10chair 00 10chair 10 10desk 11desk 10desk 10desk 10desk 10desk 00 10desk 10desk 10desk 11desk 10switch:blue 10 10 10 00 10 10 10
+00desk 00desk 00 00chair 00 00 00desk 01desk 00chair 00desk 00 00 00 00 00 00desk 01chair 00desk 00chair 00 01 01door:red:H:C 00 00chair 00desk
+00desk 00desk 00chair 00 00chair 00 00desk 01desk 00chair 00desk 00 00 00 00 00 00desk 01chair 00desk 00chair 00 00 00 00 00chair 00desk
+00desk 00desk 00 00 00 00 00desk 01desk 00chair 00desk 00 00 00 00 00 00desk 01chair 00desk 00chair 00 00 00 00 00chair 00desk
+00chair 00chair 00 00 00 00 00chair 11chair 00chair 00desk 00 00 00 00 00 00desk 01chair 00desk 00chair 00 00 00 00 00chair 00desk
+00 00 00 00 00 00 00 10door:yellow:V:C 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00employee
+00 00 00 00chair 00 00 00 01 00 00 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00
+00 00 00desk 00desk 00desk 00 00 01 00chair 00 00chair 00 00chair 00 00chair 00 01chair 00 00 00 00 00 00 00 00
+00chair 00 00 00 00 00 00employee 01chair 00 00employee 00 00employee 00 00employee 00 00employee 01 00chair 00chair 00chair 00chair 00 00chair 00chair 00chair
+10desk 10desk 10chair 00chair 10chair 10 10desk 11desk 10desk 10desk 10desk 10desk 10skill 10desk 10desk 10desk 11desk 10desk 10desk 10desk 11desk 01door:red:H:O 10desk 10desk 10desk
+00 00 00 00 00 00 00 01 00desk 00desk 00desk 00 00chair 00 00chair 00 01chair 00chair 00chair 00chair 00chair 00 00chair 00chair 00chair
+00 00 00 00 00 00 00 01 00desk 00desk 00desk 00chair 00 00chair 00 00chair 01 00desk 00desk 00desk 00desk 00 00desk 00desk 00desk
+00 00 00 00 00 00 00 01 00desk 00desk 00desk 00 00chair 00 00chair 00 01chair 00 00 00employee 00 00 00 00 00
+00 00 00 00employer 00 00 00 01 00switch:yellow 00 00 00chair 00 00chair 00 00chair 01 10 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 01 00desk 00desk 00desk 00 00chair 00 00chair 00 00chair 10door:green:V:C 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 01 00desk 00desk 00desk 00chair 00 00chair 00 00chair 01 00chair 00chair 00chair 00chair 00 00chair 00chair 00chair
+00 00chair 00 00 00chair 00 00 01chair 00desk 00desk 00desk 00 00chair 00 00chair 00 01chair 00desk 00desk 00desk 00desk 00 00desk 00desk 00desk
+00desk 00desk 00desk 00desk 00skill 00desk 00desk 01desk 00desk 00desk 00desk 00chair 00 00chair 00 00chair 01 00 00 00 00 00 00 00 00
+3
+21
+N
+A business competitor has sent a virus
+through an attachment in an email! Get rid
+of the malware before it can steal our
+secret techniques.
+Skills you will need:
+Defend against and attack virus, Email
+security, network security, cryptography,
+and authentication.
+ 
+Also, someone has been leaving chairs
+disorderly around the office; I apologize
+for any inconvenience this causes.

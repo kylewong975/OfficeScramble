@@ -1,0 +1,41 @@
+00chair 00chair 00chair 00chair 00switch:magenta 00chair 00chair 00chair 01chair 00chair 00chair 00chair 00chair 00switch:orange 00chair 00chair 00chair 01chair 00chair 00chair 00chair 00switch:yellow 00chair 00chair 00chair
+00desk 00desk 00desk 00skill 00 00desk 00desk 00desk 01desk 00desk 00desk 00desk 00skill 00 00desk 00desk 00desk 01desk 00desk 00desk 00desk 00 00desk 00desk 00desk
+00 00 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 01 00 00 00 00 00 00 00
+00chair 00chair 00chair 00chair 00 00chair 00chair 00chair 01chair 00chair 00chair 00chair 00chair 00 00chair 00chair 00chair 01chair 00chair 00chair 00chair 00 00chair 00chair 00chair
+00desk 00desk 00desk 00desk 00 00desk 00desk 00desk 01desk 00desk 00desk 00desk 00desk 00 00desk 00desk 00desk 01desk 00desk 00desk 00desk 00 00skill 00desk 00desk
+00 00 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 01 00 00 00 00 00 00 00
+00chair 00chair 00chair 00chair 00 00chair 00chair 00chair 01chair 00chair 00chair 00chair 00chair 00 00chair 00chair 00chair 01chair 00chair 00chair 00chair 00 00chair 00chair 00chair
+00desk 00desk 00desk 00desk 00 00desk 00desk 00desk 01desk 00desk 00desk 00desk 00desk 00 00desk 00desk 00desk 01desk 00desk 00desk 00desk 00 00desk 00desk 00desk
+00 00employee 00 00 00 00 00 00 01 00 00employee 00 00 00 00 00 00 01 00 00employee 00 00 00 00 00
+10 10 10 11 01door:red:H:C 10 10 10 11 10 10 10 11 01door:cyan:H:C 10 10 10 11 10 10 11 01door:blue:H:C 10 10 11
+00 00 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 01 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00 01 10 00 00 00 00 00 00 00 11 00 00 00 00 00 00 00
+00switch:red 00 00 00 00employer 00 00 00 00 10door:magenta:V:C 00 00 00 00 00 00 00 10door:orange:V:C 00 00 00 00 00 00 00switch:blue
+00 00 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 01 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 01 00 00 00 00 00 00 00
+10 10 10 10 00 10 10 10 11 10 10 10 10 00 10 10 10 11 10 10 10 00 10 10 10
+00 00employee 00 01 01door:blue:H:O 00 00 00 01 00 00employee 00 01 01door:green:H:C 00 00 00 01 00 00 01 01door:yellow:H:C 00 00 00
+00 00 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 01 00 00 00 00 00 00 00
+00chair 00chair 00chair 00chair 00 00chair 00chair 00chair 01chair 00chair 00chair 00chair 00chair 00 00chair 00chair 00chair 01chair 00chair 00chair 00chair 00 00chair 00chair 00chair
+00desk 00desk 00desk 00desk 00 00skill 00desk 00desk 01desk 00desk 00desk 00desk 00desk 00 00desk 00desk 00desk 01desk 00desk 00desk 00desk 00 00desk 00desk 00desk
+00 00 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 01 00 00 00 00 00 00 00
+00chair 00chair 00chair 00chair 00 00chair 00chair 00chair 01chair 00chair 00chair 00chair 00chair 00 00chair 00chair 00chair 01chair 00chair 00chair 00chair 00 00chair 00chair 00chair
+00desk 00desk 00desk 00desk 00 00desk 00desk 00desk 01desk 00desk 00desk 00desk 00skill 00 00desk 00desk 00desk 01desk 00desk 00desk 00desk 00 00desk 00desk 00desk
+00 00 00 00 00 00 00 00 01 00 00 00 00 00 00 00 00 01 00 00 00 00 00 00 00
+00 00 00 00 00switch:green 00 00 00 11 10 10 10 10 10switch:cyan 10 10 10 11 00 00 00 00switch:blue 00 00 00
+4
+13
+N
+Computer Applications job:
+We need to write a business letter to
+Mr. Smith and need to format the
+information of all employees and their
+addresses, phone numbers, and occupations.
+Skills you will need:
+Database, Word, Excel, Powerpoint, and
+Publisher.
+ 
+If you ever get stuck, click on the Restart
+button in the top right corner. To exit
+the game, click on the Quit button, or
+press the escape key.

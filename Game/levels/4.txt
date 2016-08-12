@@ -1,0 +1,40 @@
+01switch:blue 00 00 01 00employee 00 00chair 01desk 00 00 00 01switch:magenta 01 00power:orange 00power:blue 00power:red 00power:yellow 00power:green 00power:cyan 01 10 00 00 00 00
+01 00 00employee 01 00 00 00chair 01desk 00 00employee 00 01 01 00 00 00 00 00 00 00 10door:magenta:V:C 00 00skill 00 00employee
+01 00 00 01 00 00 00chair 01desk 00 00 00 01 01 00chair 00chair 00chair 00chair 00chair 00chair 01 00 00 00 00 00
+01 00skill 00chair 01 00 00 00chair 01desk 00 00 00 11skill 01 10desk 10desk 10desk 10desk 10desk 11desk 01door:yellow:H:C 10 10 10 10 10switch:cyan
+01 00desk 00chair 01 00 00 00chair 01desk 00 00 00 10door:red:V:O 00 10door:green:V:C 10 10 10 10door:red:V:O 10 10 10door:cyan:V:C 10 10 10 10teleporter:green:T
+01 00desk 00chair 01 00 00 00chair 01desk 00 00 00 01 01 00 00 00 00 10 10 10 10 10 10 10 00
+01 00 00 01 00 00 00 01 00 00 00 01 01 00 00 00 01 00 00 00 00 00 00 00 00
+01 00 00 01 00chair 00chair 00 01 00chair 00chair 00chair 01chair 01 00 00 00 01 00 00chair 00chair 00chair 00chair 00chair 00chair 00chair
+01 00 00 01 10desk 10skill 11 01door:red:H:O 10desk 10desk 10desk 11desk 01door:blue:H:C 10teleporter:yellow:T 10power:yellow 10 11 10 10desk 10desk 10desk 10desk 10desk 10desk 10desk
+01 10 10 10 10door:blue:V:O 10 10 10 10 10 10 10 10 10door:orange:V:C 01 00desk 00chair 00 00 00 00 01 00teleporter:cyan:T 00power:cyan 00teleporter:magenta:T
+10 10door:red:V:C 10 10 10 10 10 10 10 10 10 10 10 10door:orange:V:C 01 00desk 00chair 00 00 00 00 01 00 00 00power:magenta
+01switch:red 10 10 10 10 00 01 01switch:yellow 00 00 00teleporter:orange:T 00teleporter:blue:T 00teleporter:red:T 01teleporter:yellow:T 01 00desk 00chair 00 00 00 00 01 00 00 00
+01 10 10 10 00 01 01 01 00 00 00 00 00 01 01 00 00 00 00chair 00chair 01chair 01door:red:H:C 00 00 00
+01 10 10 00 01 01 01 01 00 00 00chair 00chair 00chair 01chair 01 10teleporter:orange:T 10power:orange 10 10desk 10desk 11desk 11teleporter:magenta:T 10 00 10
+01 10switch:orange 10 11 01 01 01 01 00 00 00desk 00desk 00desk 01desk 01 00 00 00 00 00 00 01 01 01door:yellow:H:O 00
+01 10 10 01 01 01 01 01 00 00 00 00 00 01 01 00 00 00 00chair 00chair 00chair 01 00 00 00
+01 00 10 01 01 01 01 01 00 00 00chair 00chair 00chair 01chair 01 00 00 00 00desk 00desk 00desk 01 00 00 00
+01 01 01switch:green 01 01 01 01 01 00 00 00desk 00desk 00desk 01desk 01 00 00 00 00 00 00 01 00 00 00
+01 01 01 01 11 01 01 01 00 00 00 00 00 01 01 00 00 00 00chair 00chair 01chair 01door:magenta:H:O 00 00 00
+01 10 01 01 01 01 01 01 00 00 00chair 00chair 00chair 01chair 01 10teleporter:red:T 10power:red 10 10desk 10desk 11desk 11teleporter:cyan:T 00 00 00
+00 10 01 01 01 01 01 01 00 00 00desk 00desk 00desk 01desk 01 00 00 00 00 00 00 01 00 00 00
+01 01 11 10 10 01 01 01 00 00 00 00 00 01 01 00 00employee 00 00chair 00chair 00chair 01chair 00 00 00
+01 01 10 10 10 11 01 01door:magenta:H:C 00 00 00chair 00chair 00chair 01chair 01 00 00 00 00desk 00desk 00desk 01desk 00 00 00
+01 01 00 00employer 00 00 00 01 10teleporter:green:T 10power:green 10desk 10desk 10desk 11desk 01 00 00 00 00 00 00 01 00 00 00
+01 01 00 00 00 00 01 00 00 00 00 00 00 00 01 00teleporter:blue:T 00power:blue 00 00 00 00 01 00 00skill 00
+3
+24
+N
+Intro. to Information Technology Job:
+We need to mass-produce and distribute our
+new business concept, but using just a word
+document would not be enough.
+Skills you will need include:
+Powerpoint presentations, Common programs -
+functions, Computer hardware and software,
+E-mail and electronic communication, and
+Networking concepts.
+ 
+Is it just me, or are these teleporters
+making it harder to get around the office?
